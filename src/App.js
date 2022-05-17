@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Generator } from "./components/Generator";
+import React, { useState } from "react";
 
 function App() {
+  const [output, setOutput] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Create a project to generate a random number.</h3>
+      <div className="header">
+        <h2>
+          <span>{output}</span>
+        </h2>
+      </div>
+      <Generator output={output} setOutput={setOutput} />
     </div>
   );
 }
